@@ -22,6 +22,7 @@ export class LoginService {
       });
       if (user && user.length > 0) {
         this.setCurrentUser(user[0]);
+        sessionStorage.setItem('userInfo', JSON.stringify(user[0]));
         return of(user[0]);
       }
     }

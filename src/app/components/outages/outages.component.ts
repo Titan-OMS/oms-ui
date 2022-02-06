@@ -11,12 +11,11 @@ import {ColDef} from 'ag-grid-community';
 export class OutagesComponent implements OnInit {
 
   columnDefs: ColDef[] = [
-    { field: 'guid', sortable: true, filter: true, checkboxSelection: false, lockPosition: true },
+    { field: 'guid', headerName: 'Incident ID', sortable: true, filter: true, checkboxSelection: false, lockPosition: true },
     { field: 'confirmed', sortable: true, filter: true, checkboxSelection: false},
     { field: 'status', sortable: true, filter: true, checkboxSelection: false, lockPosition: true},
-    { field: 'name', sortable: true, filter: true, checkboxSelection: false},
-    { field: 'gender', sortable: true, filter: true, checkboxSelection: false},
-    { field: 'company', sortable: true, filter: true, checkboxSelection: false, lockPosition: true},
+    { field: 'name', sortable: true, headerName: 'Reported By' , filter: true, checkboxSelection: false},
+    { field: 'company', headerName: 'Substation', sortable: true, filter: true, checkboxSelection: false, lockPosition: true},
     { field: 'email', sortable: true, filter: true, checkboxSelection: false},
     { field: 'crew', sortable: true, filter: true, checkboxSelection: false},
     { field: 'address', sortable: true, filter: true, checkboxSelection: false},
