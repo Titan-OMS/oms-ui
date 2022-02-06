@@ -5,10 +5,10 @@ import {ColDef} from 'ag-grid-community';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  templateUrl: './outages.component.html',
+  styleUrls: ['./outages.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class OutagesComponent implements OnInit {
 
   columnDefs: ColDef[] = [
     { field: 'guid', sortable: true, filter: true, checkboxSelection: false, lockPosition: true },
