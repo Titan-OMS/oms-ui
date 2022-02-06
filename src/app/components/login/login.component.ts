@@ -24,18 +24,15 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     if (this.form.valid && this.form.value.username.length > 0 && this.form.value.password.length > 0) {
-      console.log('*****FORM DATA******', this.form.value);
       if (this.form.value.username && this.form.value.password) {
         this.loginService.authenticate(this.form.value.username,
           this.form.value.password).subscribe((userInfo) => {
           if (userInfo) {
             this.loginError = null;
             this.router.navigate(['/']);
-            console.log('*****USER INFO*****', userInfo);
           }
         }, (error => {
           this.loginError = 'Incorrect Login Info';
-          console.log('******ERROR******', error);
         }));
       }
       this.submitEM.emit(this.form.value);
