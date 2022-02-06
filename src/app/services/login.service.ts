@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {UsersService} from './users.service';
 import {Observable, of, throwError} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class LoginService {
   isLoggedIn = false;
 
   private currentUser: any;
-  constructor(private userService: UsersService) {
+  constructor(private userService: UsersService, private router: Router) {
   }
 
   authenticate(username: string, password: string): Observable<any> {
@@ -39,5 +40,6 @@ export class LoginService {
   logout(): void {
     this.isLoggedIn = false;
     this.currentUser = undefined;
+    this.router.navigate(['login']);
   }
 }

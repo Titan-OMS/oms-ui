@@ -1,4 +1,15 @@
-
 <div class="oms-ui-container">
+  <mat-toolbar color="primary" *ngIf="loginService.isLoggedIn">
+    <mat-toolbar-row>
+      <span>Titan OMS</span>
+      <mat-form-field>
+        <mat-select [(value)]="views[0].value">
+          <mat-option *ngFor="let view of views" [value]="view.value">  {{ view.viewValue }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <span class="example-spacer"></span>
+      <span> Welcome {{ loginService.getCurrentUser().name  }} ! <a (click)="logout()"> Logout </a> </span>
+    </mat-toolbar-row>
+  </mat-toolbar>
   <router-outlet></router-outlet>
 </div>
