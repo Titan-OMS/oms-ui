@@ -1,7 +1,7 @@
 <div class="oms-ui-container">
   <mat-toolbar color="primary" *ngIf="loginService.isLoggedIn">
     <mat-toolbar-row>
-      <span>Titan OMS</span>
+      <span>Grid OMS Solution</span>
       <mat-form-field>
         <mat-select [(value)]="views[0].value">
           <mat-option *ngFor="let view of views" [value]="view.value">  {{ view.viewValue }}</mat-option>
