@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ColDef} from 'ag-grid-community';
 
 
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-outages',
   templateUrl: './outages.component.html',
   styleUrls: ['./outages.component.scss']
 })
 export class OutagesComponent implements OnInit {
-
+  @Input()
   columnDefs: ColDef[] = [
     { field: 'guid', headerName: 'Incident ID', sortable: true, filter: true, checkboxSelection: false, lockPosition: true },
     { field: 'confirmed', sortable: true, filter: true, checkboxSelection: false},
@@ -26,6 +26,7 @@ export class OutagesComponent implements OnInit {
     { field: 'longitude', sortable: true, filter: true, checkboxSelection: false}
   ];
 
+  @Input()
   rowData = [
     {
       _id: '6200164b3c04cf5ccce3e13d',
