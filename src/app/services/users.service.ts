@@ -19,12 +19,12 @@ export class UsersService {
     },
     {
       guid: 'a85524d3-4a18-4990-88a2-ed661ddf521a',
-      name: 'Ashley Shepherd',
+      name: 'Delveri Chick',
       username: 'admin',
       password: 'titan',
       gender: 'male',
       company: 'MAZUDA',
-      email: 'ashleyshepherd@mazuda.com',
+      email: 'delveri.chick@titanoms.com',
       phone: '+1 (866) 461-3632',
       address: '841 Bushwick Place, Glenville, Alabama, 9615',
       registered: '2017-08-10T03:13:08 +04:00'

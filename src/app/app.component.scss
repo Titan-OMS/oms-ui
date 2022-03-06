@@ -1,3 +1,7 @@
+*{
+ //  --ag-background-color: #00202c !important;
+}
+
 .oms-ui-container {
   overflow: hidden;
 }
@@ -19,4 +23,8 @@
 
 mat-form-field {
   margin-left: 5em;
+}
+
+.create-outage-btn {
+  margin-right: 3em;
 }

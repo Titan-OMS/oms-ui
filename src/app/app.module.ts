@@ -15,12 +15,19 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import { AgGridModule } from 'ag-grid-angular';
+import { CreateOutageComponent } from './components/create-outage/create-outage.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { OutageMapComponent } from './outage-map/outage-map.component';
+import { CrewsComponent } from './crews/crews.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    OutagesComponent
+    OutagesComponent,
+    CreateOutageComponent,
+    OutageMapComponent,
+    CrewsComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +41,7 @@ import { AgGridModule } from 'ag-grid-angular';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    MatDialogModule,
     MatSelectModule,
     AgGridModule.withComponents([])
   ],
