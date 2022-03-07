@@ -24,9 +24,10 @@ export class OutageMapComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     const map = new harp.MapView({
       canvas: document.getElementById('map'),
+      tilt: 2,
       theme: 'https://unpkg.com/@here/harp-map-theme@latest/resources/berlin_tilezen_night_reduced.json',
     });
-    map.setCameraGeolocationAndZoom(new harp.GeoCoordinates(25.7617, 80.1918), 16);
+    map.setCameraGeolocationAndZoom(new harp.GeoCoordinates(25.775112431526267, -80.1999449371806), 16.391);
     const mapControls = new harp.MapControls(map);
     const omvDataSource = new harp.OmvDataSource({
       baseUrl: 'https://xyz.api.here.com/tiles/herebase.02',

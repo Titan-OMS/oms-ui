@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {LoginService} from './services/login.service';
 import {MatDialog} from '@angular/material/dialog';
 import {CreateOutageComponent} from './components/create-outage/create-outage.component';
@@ -16,11 +16,11 @@ interface AppView {
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   constructor(public loginService: LoginService, public dialog: MatDialog, private router: Router) {
   }
 
-  selected: AppView | undefined;
+  selected: AppView | undefined = {value: '', viewValue: ''};
 
   views: AppView[] = [
     {value: 'outages', viewValue: 'Outages'},
@@ -30,7 +30,6 @@ export class AppComponent implements OnInit {
   title = 'oms-ui';
 
   ngOnInit(): void {
-    this.selected = this.views[0];
   }
 
   logout(): void {
@@ -46,5 +45,11 @@ export class AppComponent implements OnInit {
     console.log('******CHANGE******', event);
     this.selected = this.views.filter(v => v.value === event.value)[0];
     this.router.navigateByUrl(event.value);
+  }
+
+  ngAfterViewInit(): void {
+    if (this.views.length > 0) {
+      this.selected = this.views[2];
+    }
   }
 }

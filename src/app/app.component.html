@@ -3,7 +3,7 @@
     <mat-toolbar-row>
       <span>Grid OMS Solution</span>
       <mat-form-field>
-        <mat-select (selectionChange)="handleChange($event)">
+        <mat-select  (selectionChange)="handleChange($event)">
           <mat-option *ngFor="let view of views" [value]="view.value">  {{ view.viewValue }}</mat-option>
         </mat-select>
       </mat-form-field>
