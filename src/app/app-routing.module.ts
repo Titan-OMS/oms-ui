@@ -10,7 +10,7 @@ import {CrewsComponent} from './crews/crews.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'outages',
+    redirectTo: 'network',
     pathMatch: 'full'
   },
   {
